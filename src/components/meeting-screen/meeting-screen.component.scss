@@ -9,4 +9,56 @@
         height: 100vh;
         object-fit: cover;
     }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 100%;
+        text-align: center;
+
+
+        text-shadow: 0 2px 4px var(--background-color);
+    }
+}
+
+.swipper-container {
+    position: absolute;
+    bottom: 4rem;
+    width: 100%;
+    text-align: center;
+}
+
+.clue {
+    text-shadow: 0 2px 4px var(--background-color);
+}
+
+.swipper {
+    position: relative;
+    margin: 0 10%;
+    height: 4rem;
+    border: 2px solid var(--main-text-color);
+    border-radius: 2rem;
+
+    &__button {
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        border: 0;
+        background-color: var(--main-text-color);
+        width: 4rem;
+        border-radius: 2rem;
+    }
+
+    &__finish-position {
+        position: absolute;
+        right: -2px;
+        top: -2px;
+        bottom: -2px;
+        border: 2px solid var(--main-text-color);
+        width: 4rem;
+        border-radius: 2rem;
+    }
 }

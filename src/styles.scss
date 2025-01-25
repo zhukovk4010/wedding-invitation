@@ -1,7 +1,7 @@
 @import url(fonts.scss);
 
 :root {
-    font-family: Playfair, sans-serif;
+    font-family: CormorantGaramond, sans-serif;
     font-size: 1em;
 
     box-sizing: border-box;
@@ -26,4 +26,11 @@ body {
 
 img {
     max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 300;
 }
