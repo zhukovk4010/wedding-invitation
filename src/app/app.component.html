@@ -1,6 +1,7 @@
 
 @if (windowWidth() > 600) {
   <app-desktop-overlay />
+} @else {
+  <router-outlet></router-outlet>
 }
 
-<router-outlet></router-outlet>

@@ -1,0 +1,12 @@
+.meeting-screen {
+    position: absolute;
+    inset: 0;
+
+    overflow: hidden;
+
+    &__video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+    }
+}
