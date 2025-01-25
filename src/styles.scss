@@ -2,4 +2,27 @@
 
 :root {
     font-family: Playfair, sans-serif;
+    font-size: 1em;
+
+    box-sizing: border-box;
+
+    --background-color: #1A1A1A;
+    --main-text-color:  #FFFFFF;
+    --silver-color: #A8A8A8;
+    --purple-color: #9B51E0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+}
+
+img {
+    max-width: 100%;
 }

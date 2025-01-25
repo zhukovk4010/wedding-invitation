@@ -1,0 +1,14 @@
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: var(--background-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title-container {
+        width: 500px;
+        text-align: center;
+    }
+}
