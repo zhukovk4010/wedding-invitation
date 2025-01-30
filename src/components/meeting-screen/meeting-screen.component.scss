@@ -37,9 +37,10 @@
 .swipper {
     position: relative;
     margin: 0 10%;
-    height: 4rem;
+    height: 64px;
     border: 2px solid var(--main-text-color);
-    border-radius: 2rem;
+    border-radius: 32px;
+    background-color: rgba($color: #FFFFFF, $alpha: 0.2);
 
     &__button {
         position: absolute;
@@ -48,8 +49,14 @@
         bottom: 0;
         border: 0;
         background-color: var(--main-text-color);
-        width: 4rem;
+        width: 64px;
         border-radius: 2rem;
+        padding: 0;
+
+        & img {
+            width: 80%;
+            height: 80%;
+        }
     }
 
     &__finish-position {

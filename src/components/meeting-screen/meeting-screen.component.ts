@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
   selector: 'app-meeting-screen',
@@ -6,6 +6,62 @@ import { Component } from '@angular/core';
   templateUrl: './meeting-screen.component.html',
   styleUrl: './meeting-screen.component.scss'
 })
-export class MeetingScreenComponent {
+export class MeetingScreenComponent implements OnInit {
+  private _el = inject(ElementRef);
+  private _renderer = inject(Renderer2);
 
+  private _isDragging = false;
+  private _startX = 0;
+  private _offsetX = 0;
+  private _maxMove = 0;
+
+  ngOnInit() {
+    const button = this._el.nativeElement.querySelector('.swipper__button');
+    const parent = this._el.nativeElement.querySelector('.swipper');
+    this._maxMove = parent.clientWidth * 0.8 - 64;
+  }
+
+  onDragStart(event: TouchEvent) {
+    this._isDragging = true;
+    const clientX = this.getClientX(event);
+    this._startX = clientX - this._el.nativeElement.querySelector('.swipper__button').offsetLeft;
+    this._renderer.setStyle(this._el.nativeElement.querySelector('.swipper__button'), 'transition', 'none');
+  }
+
+  @HostListener('touchmove', ['$event'])
+  onDragMove(event: TouchEvent) {
+    if (!this._isDragging) return;
+
+    const clientX = this.getClientX(event);
+    this._offsetX = clientX - this._startX;
+
+    if (this._offsetX < 0) this._offsetX = 0;
+    if (this._offsetX > this._maxMove) this._offsetX = this._maxMove;
+    
+
+    this._renderer.setStyle(this._el.nativeElement.querySelector('.swipper__button'), 'left', `${this._offsetX}px`);
+  }
+
+  @HostListener('touchend')
+  onDragEnd() {
+    this._isDragging = false;
+    if (this._offsetX >= this._maxMove) {
+      this.onUnlock(); // Сообщаем родителю, что разблокировано
+    } else {
+      this.resetPosition();
+    }
+  }
+
+  private resetPosition() {
+    this._renderer.setStyle(this._el.nativeElement.querySelector('.swipper__button'), 'transition', 'left 0.3s ease');
+    this._renderer.setStyle(this._el.nativeElement.querySelector('.swipper__button'), 'left', '0px');
+  }
+
+  private getClientX(event: TouchEvent): number {
+    return (event as TouchEvent).touches[0].clientX;
+  }
+
+  onUnlock() {
+    console.log('разблокировано!')
+  }
 }

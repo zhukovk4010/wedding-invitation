@@ -5,7 +5,7 @@
     </video>
 
     <div class="meeting-screen__title">
-        <h1>
+        <h1 class="h1">
             Приглашение на свадьбу<br>Кирилла и Алины
         </h1>
     </div>
@@ -13,7 +13,14 @@
     <div class="swipper-container">
         <h3 class="clue">Разблокируйте приглашение</h3>
         <div class="swipper">
-            <button class="swipper__button"></button>
+            <button 
+                class="swipper__button"
+                (touchstart)="onDragStart($event)"
+                appSwipeUnlock 
+                (unlocked)="onUnlock()"
+            >
+                <img src="/assets/svg/wedding-icon.svg" alt="">
+            </button>
             <div class="swipper__finish-position"></div>
         </div>
     </div>
