@@ -14,21 +14,20 @@ export class MeetingScreenComponent implements OnInit {
   private _startX = 0;
   private _offsetX = 0;
   private _maxMove = 0;
+  private _clientX = 0;
 
   public isMeetingScreenHidden = signal(false);
 
   closeMeetingScreen = output()
 
   ngOnInit() {
-    const button = this._el.nativeElement.querySelector('.swipper__button');
     const parent = this._el.nativeElement.querySelector('.swipper');
     this._maxMove = parent.clientWidth * 0.8 - 64;
   }
 
   onDragStart(event: TouchEvent) {
     this._isDragging = true;
-    const clientX = this.getClientX(event);
-    this._startX = clientX - this._el.nativeElement.querySelector('.swipper__button').offsetLeft;
+    this._clientX = this.getClientX(event);
     this._renderer.setStyle(this._el.nativeElement.querySelector('.swipper__button'), 'transition', 'none');
   }
 
@@ -37,7 +36,7 @@ export class MeetingScreenComponent implements OnInit {
     if (!this._isDragging) return;
 
     const clientX = this.getClientX(event);
-    this._offsetX = clientX - this._startX;
+    this._offsetX = clientX - this._clientX;
 
     if (this._offsetX < 0) this._offsetX = 0;
     if (this._offsetX > this._maxMove) this._offsetX = this._maxMove;
