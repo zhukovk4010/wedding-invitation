@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, signal} from '@angular/core';
 import { MeetingScreenComponent } from "../../components/meeting-screen/meeting-screen.component";
 
 @Component({
@@ -8,5 +8,9 @@ import { MeetingScreenComponent } from "../../components/meeting-screen/meeting-
   styleUrl: './alena-and-denis.component.scss'
 })
 export class AlenaAndDenisComponent {
+  isMeetingScreenOpen = signal(true);
 
+  onUnlock() {
+    this.isMeetingScreenOpen.set(false);
+  }
 }

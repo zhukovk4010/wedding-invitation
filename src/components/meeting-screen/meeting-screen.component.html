@@ -1,4 +1,4 @@
-<div class="meeting-screen">
+<div class="meeting-screen" [class.hidden]="isMeetingScreenHidden()">
     <video class="meeting-screen__video" muted autoplay loop playsinline preload="metadata">
         <source src="assets/video/meeting-video.mp4" type="video/mp4" />
         Your browser does not support HTML5 video.
@@ -13,10 +13,10 @@
     <div class="swipper-container">
         <h3 class="clue">Разблокируйте приглашение</h3>
         <div class="swipper">
-            <button 
+            <button
                 class="swipper__button"
                 (touchstart)="onDragStart($event)"
-                appSwipeUnlock 
+                appSwipeUnlock
                 (unlocked)="onUnlock()"
             >
                 <img src="/assets/svg/wedding-icon.svg" alt="">

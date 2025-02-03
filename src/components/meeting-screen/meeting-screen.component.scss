@@ -1,8 +1,11 @@
 .meeting-screen {
     position: absolute;
     inset: 0;
+    background-color: var(--background-color);
 
     overflow: hidden;
+
+    transition: transform 0.3s ease-out;
 
     &__video {
         width: 100vw;
@@ -21,6 +24,10 @@
 
         text-shadow: 0 2px 4px var(--background-color);
     }
+}
+
+.meeting-screen.hidden {
+  transform: translateY(-100%);
 }
 
 .swipper-container {

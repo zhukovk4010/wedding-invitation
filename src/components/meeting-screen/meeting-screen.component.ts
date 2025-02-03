@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, inject, OnInit, Renderer2 } from '@angular/core';
+import {Component, ElementRef, HostListener, inject, OnInit, output, Renderer2, signal} from '@angular/core';
 
 @Component({
   selector: 'app-meeting-screen',
@@ -14,6 +14,10 @@ export class MeetingScreenComponent implements OnInit {
   private _startX = 0;
   private _offsetX = 0;
   private _maxMove = 0;
+
+  public isMeetingScreenHidden = signal(false);
+
+  closeMeetingScreen = output()
 
   ngOnInit() {
     const button = this._el.nativeElement.querySelector('.swipper__button');
@@ -37,7 +41,7 @@ export class MeetingScreenComponent implements OnInit {
 
     if (this._offsetX < 0) this._offsetX = 0;
     if (this._offsetX > this._maxMove) this._offsetX = this._maxMove;
-    
+
 
     this._renderer.setStyle(this._el.nativeElement.querySelector('.swipper__button'), 'left', `${this._offsetX}px`);
   }
@@ -62,6 +66,10 @@ export class MeetingScreenComponent implements OnInit {
   }
 
   onUnlock() {
-    console.log('разблокировано!')
+    this.isMeetingScreenHidden.set(true);
+
+    setTimeout(() => {
+      this.closeMeetingScreen.emit();
+    }, 300)
   }
 }
