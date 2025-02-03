@@ -1,7 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "baseHref": "/wedding-invitation/",
   "newProjectRoot": "projects",
   "projects": {
     "wedding-invitation": {
@@ -20,6 +19,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/wedding-invitation",
+            "baseHref": "/wedding-invitation/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
