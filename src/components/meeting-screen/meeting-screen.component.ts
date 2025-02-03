@@ -22,7 +22,7 @@ export class MeetingScreenComponent implements OnInit {
 
   ngOnInit() {
     const parent = this._el.nativeElement.querySelector('.swipper');
-    this._maxMove = parent.clientWidth * 0.8 - 64;
+    this._maxMove = parent.clientWidth * 0.8;
   }
 
   onDragStart(event: TouchEvent) {
