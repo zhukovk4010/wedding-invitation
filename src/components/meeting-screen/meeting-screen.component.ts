@@ -71,6 +71,6 @@ export class MeetingScreenComponent implements OnInit {
 
     setTimeout(() => {
       this.closeMeetingScreen.emit();
-    }, 300)
+    }, 200)
   }
 }
