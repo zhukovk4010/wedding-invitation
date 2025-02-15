@@ -21,6 +21,7 @@ export class MeetingScreenComponent implements OnInit {
   closeMeetingScreen = output()
 
   ngOnInit() {
+    document.body.style.overflowY = 'hidden';
     const parent = this._el.nativeElement.querySelector('.swipper');
     this._maxMove = parent.clientWidth * 0.8;
   }
@@ -65,6 +66,7 @@ export class MeetingScreenComponent implements OnInit {
   }
 
   onUnlock() {
+    document.body.style.overflowY = 'scroll';
     this.isMeetingScreenHidden.set(true);
 
     setTimeout(() => {

@@ -2,4 +2,10 @@
   <app-meeting-screen (closeMeetingScreen)="onUnlock()" />
 }
 
-<app-welcome-section [isUnlocked]="!isMeetingScreenOpen()" [text]="usersData.alenaAndDenis.welcomeText" />
+@if (!isMeetingScreenOpen()) {
+  <app-welcome-section [isUnlocked]="!isMeetingScreenOpen()" [text]="usersData.alenaAndDenis.welcomeText" />
+}
+
+@if (!isMeetingScreenOpen()) {
+  <app-timing-section />
+}
