@@ -24,4 +24,11 @@ import {animate, style, transition, trigger} from '@angular/animations';
 export class WelcomeSectionComponent {
   public text = input<{title: string, paragraph?: string}>();
   public isUnlocked = input<boolean>(false);
+
+  public deviceHeight: number = 0;
+
+  constructor() {
+    this.deviceHeight = window.innerHeight;
+  }
+
 }
