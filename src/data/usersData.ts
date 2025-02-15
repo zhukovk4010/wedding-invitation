@@ -6,7 +6,12 @@ export const usersData = {
     yeskov: {},
     bolshakova: {},
     sergoAndVarya: {},
-    alenaAndDenis: {},
+    alenaAndDenis: {
+      welcomeText: {
+        title: 'Дорогие Алена и Денис',
+        paragraph: 'С радостью и трепетом в сердце приглашаем вас на самый счастливый день нашей жизни – нашу свадьбу!'
+      }
+    },
     bridesParents: {},
     bridesBrother: {},
     fedchenkova: {},

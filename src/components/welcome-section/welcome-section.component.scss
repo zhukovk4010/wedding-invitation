@@ -1,0 +1,60 @@
+.content {
+  padding: 0 2rem;
+}
+
+.welcome-section {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  display: grid;
+  place-items: center;
+
+  &__title {
+    text-align: center;
+    margin: 0;
+  }
+
+  &__paragraph {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+  }
+
+  &__date {
+    margin-top: 2rem;
+    font-size: 0.875rem;;
+    text-align: center;
+
+    & span {
+      font-size: 1.125rem;
+      font-weight: 700;
+    }
+  }
+
+  &__img-container {
+    margin-top: 4rem;
+    text-align: center;
+
+    & img {
+      width: 40px;
+    }
+  }
+}
+
+.stickers {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20rem;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+
+  & img {
+    width: 12rem;
+  }
+}

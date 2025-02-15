@@ -1,0 +1,20 @@
+<section class="welcome-section">
+  @if (isUnlocked()) {
+    <div @fadeInUp class="content">
+      <h1 class="h1 welcome-section__title">{{ text()?.title }}</h1>
+      <p class="paragraph welcome-section__paragraph">{{ text()?.paragraph }}</p>
+
+      <div class="welcome-section__date">Когда? <span>1 июня 2025 года</span></div>
+
+      <div class="welcome-section__img-container">
+        <img class="welcome-section__img" src="assets/svg/arrow-down-icon.svg">
+      </div>
+    </div>
+  }
+
+  @if (isUnlocked()) {
+    <div class="stickers">
+      <img @stickerAnimation src="assets/images/alina-kirill-sticker.png" alt="">
+    </div>
+  }
+</section>

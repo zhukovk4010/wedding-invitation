@@ -6,6 +6,22 @@
     font-display: swap;
 }
 
+@font-face {
+  font-family: Nunito;
+  src: url('assets/fonts/Nunito-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url('assets/fonts/Nunito-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 //@font-face {
 //    font-family: Playfair;
 //    src: url(assets/fonts/PlayfairDisplay-Medium.ttf);

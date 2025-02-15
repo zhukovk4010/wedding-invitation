@@ -2,4 +2,4 @@
   <app-meeting-screen (closeMeetingScreen)="onUnlock()" />
 }
 
-<h1>Hello</h1>
+<app-welcome-section [isUnlocked]="!isMeetingScreenOpen()" [text]="usersData.alenaAndDenis.welcomeText" />

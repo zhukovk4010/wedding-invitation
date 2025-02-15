@@ -23,6 +23,11 @@ body {
     color: var(--main-text-color);
     margin: 0;
     line-height: 1.33;
+    font-family: Nunito, sans-serif;
+}
+
+p {
+  font-family: Nunito, sans-serif;
 }
 
 img {
@@ -33,7 +38,7 @@ h1,
 h2,
 h3,
 h4 {
-    font-family: CormorantGaramond;
+    font-family: CormorantGaramond, sans-serif;
     font-weight: 300;
 }
 
@@ -43,4 +48,9 @@ h4 {
 
 .h3 {
     font-size: 1rem;
+}
+
+.paragraph {
+  margin: 0;
+  font-size: 0.875rem;
 }

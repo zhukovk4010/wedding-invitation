@@ -1,5 +1,6 @@
 .meeting-screen {
     position: absolute;
+    z-index: 10;
     inset: 0;
     background-color: var(--background-color);
 
