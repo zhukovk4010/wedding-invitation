@@ -2,6 +2,8 @@
   <app-meeting-screen (closeMeetingScreen)="onUnlock()" />
 }
 
+<app-welcome-img-section />
+
 @if (!isMeetingScreenOpen()) {
   <app-welcome-section [isUnlocked]="!isMeetingScreenOpen()" [text]="usersData.alenaAndDenis.welcomeText" />
 }
