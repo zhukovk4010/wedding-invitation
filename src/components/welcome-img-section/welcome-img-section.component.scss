@@ -10,7 +10,7 @@
 
 .date {
   position: absolute;
-  bottom: 20%;
+  bottom: 5%;
   right: 10%;
 
   & * {
@@ -22,14 +22,14 @@
   }
 
   &__day {
-    font-size: 10rem;
+    font-size: 6rem;
   }
 
   &__month {
-    font-size: 8rem;
+    font-size: 5rem;
   }
 
   &__year {
-    font-size: 8rem;
+    font-size: 5rem;
   }
 }
