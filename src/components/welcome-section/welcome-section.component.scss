@@ -42,19 +42,26 @@
   }
 }
 
-.stickers {
+.svg-container {
+  margin: 0 -2rem;
+  background-image: linear-gradient(to bottom, transparent, #000000, transparent);
+}
+
+.first-text {
+  margin-top: 2rem;
+  font-size: 1.25rem;
+  width: 60%;
+}
+
+.images-container {
+  display: flex;
+  gap: 20%;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 20rem;
-
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-
 
   & img {
-    width: 12rem;
+    width: 40%;
   }
 }

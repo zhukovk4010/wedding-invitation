@@ -1,22 +1,22 @@
 @font-face {
-    font-family: CormorantGaramond;
-    src:url('assets/fonts/CormorantGaramond-LightItalic.woff2') format('woff2'), url('assets/fonts/CormorantGaramond-LightItalic.woff') format('woff'), url('assets/fonts/CormorantGaramond-LightItalic.ttf') format('ttf');
-    font-weight: 300;
-    font-style: italic;
+    font-family: Sacramente;
+    src:url('assets/fonts/Sacramento.ttf');
+    font-weight: 400;
+    font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-  font-family: Nunito;
-  src: url('assets/fonts/Nunito-Regular.ttf') format('ttf');
+  font-family: Futura;
+  src: url('assets/fonts/zhuan_FuturaNowScript-Rg.ttf');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: Nunito;
-  src: url('assets/fonts/Nunito-Bold.ttf') format('ttf');
+  font-family: Futura;
+  src: url('assets/fonts/zhuan_FuturaNowScript-Bd.ttf');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

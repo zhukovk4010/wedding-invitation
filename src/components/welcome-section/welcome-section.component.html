@@ -1,20 +1,60 @@
 <section class="welcome-section" [style.height.px]="deviceHeight">
-  @if (isUnlocked()) {
-    <div @fadeInUp class="content">
-      <h1 class="h1 welcome-section__title">{{ text()?.title }}</h1>
-      <p class="paragraph welcome-section__paragraph">{{ text()?.paragraph }}</p>
+  <div>
+    @if (isUnlocked()) {
+      <div @fadeInUp class="content">
+        <h1 class="h1 welcome-section__title">{{ text()?.title?.first }}<br>{{ text()?.title?.last }}</h1>
 
-      <div class="welcome-section__date">Когда? <span>1 июня 2025 года</span></div>
+        <div class="first-text">
+          Уже совсем скоро состоится день, которого мы так долго ждали🤍
+        </div>
+        <div class="svg-container">
+          <svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <style>
+              @keyframes moveWave {
+                0% { transform: translateX(-50px); }
+                50% { transform: translateX(0); }
+                100% { transform: translateX(-50px); }
+              }
+              .wave {
+                animation: moveWave 3s infinite linear;
+                opacity: 0.6;
+                stroke: #9B51E0;
+              }
+              .wave:nth-child(2) {
+                animation-duration: 4s;
+                opacity: 0.5;
+              }
+              .wave:nth-child(3) {
+                animation-duration: 6s;
+                opacity: 0.4;
+              }
+              .wave:nth-child(4) {
+                animation-duration: 8s;
+                opacity: 0.3;
+              }
+              .wave:nth-child(5) {
+                animation-duration: 10s;
+                opacity: 0.2;
+              }
+            </style>
 
-      <div class="welcome-section__img-container">
-        <img class="welcome-section__img" src="assets/svg/arrow-down-icon.svg">
+            <g fill="none" stroke-width="3" transform="translate(600,0)">
+              <path class="wave" d="M-600 280 Q250 350 600 280 T1200 280" />
+              <path class="wave" d="M-600 300 Q280 380 600 300 T1200 300" />
+              <path class="wave" d="M-600 320 Q300 400 600 320 T1200 320" />
+              <path class="wave" d="M-600 340 Q320 420 600 340 T1200 340" />
+              <path class="wave" d="M-600 360 Q340 440 600 360 T1200 360" />
+            </g>
+          </svg>
+        </div>
+        <p class="paragraph welcome-section__paragraph">{{ text()?.paragraph }}</p>
       </div>
-    </div>
-  }
+    }
 
-  @if (isUnlocked()) {
-    <div class="stickers">
-      <img @stickerAnimation src="assets/images/alina-kirill-sticker.png" alt="">
+    <div class="images-container">
+      <img src="assets/images/flowers_left.png" alt="">
+      <img src="assets/images/flowers_right.png" alt="">
     </div>
-  }
+  </div>
+
 </section>
