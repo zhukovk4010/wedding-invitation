@@ -4,10 +4,11 @@ import {WelcomeSectionComponent} from '../../components/welcome-section/welcome-
 import {usersData} from '../../data/usersData';
 import {TimingSectionComponent} from '../../components/timing-section/timing-section.component';
 import {WelcomeImgSectionComponent} from '../../components/welcome-img-section/welcome-img-section.component';
+import {PlaceSectionComponent} from '../../components/place-section/place-section.component';
 
 @Component({
   selector: 'app-alena-and-denis',
-  imports: [MeetingScreenComponent, WelcomeSectionComponent, TimingSectionComponent, WelcomeImgSectionComponent],
+  imports: [MeetingScreenComponent, WelcomeSectionComponent, TimingSectionComponent, WelcomeImgSectionComponent, PlaceSectionComponent],
   templateUrl: './alena-and-denis.component.html',
   styleUrl: './alena-and-denis.component.scss'
 })
