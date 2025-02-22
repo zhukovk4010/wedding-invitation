@@ -20,12 +20,12 @@
 
 .mobile-widgets-slider {
   position: relative;
-  left: -0.75rem;
-  width: calc(100% + 1.5rem);
+  left: -1rem;
+  width: calc(100% + 2rem);
   display: grid;
   grid-auto-flow: column;
   grid-gap: 1.25rem;
-  padding: 0 0.75rem 0.5rem;
+  padding: 0 1rem 0.5rem;
 
   overflow-x: scroll;
   overscroll-behavior-x: contain;
