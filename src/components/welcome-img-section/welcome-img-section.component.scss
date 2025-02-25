@@ -11,7 +11,12 @@
 .date {
   position: absolute;
   bottom: 5%;
+  top: 5%;
   right: 10%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   & * {
     display: block;
@@ -22,17 +27,18 @@
   }
 
   &__day {
-    font-size: 6rem;
+    font-size: 10rem;
+    text-align: center;
   }
 
   &__month {
-    margin-top: 2rem;
-    font-size: 5rem;
+    margin-top: 4rem;
+    font-size: 8rem;
   }
 
   &__year {
-    margin-top: 2rem;
-    font-size: 5rem;
+    margin-top: 4rem;
+    font-size: 8rem;
   }
 }
 
