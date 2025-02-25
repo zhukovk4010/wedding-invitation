@@ -1,0 +1,43 @@
+.section {
+  padding: 0 1rem 2rem;
+  overflow: hidden;
+}
+
+.dress-code-card {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--gray);
+  box-shadow: 0 0.5rem 1rem var(--background-color);
+
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.dress-code-card.animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.dress-code-card + .dress-code-card {
+  margin-top: 2rem;
+}
+
+.palette {
+  margin: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+
+  & div {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 2px solid var(--silver-color);
+  }
+}
+
+
+.card-title {
+  font-size: 1.5rem;
+}
