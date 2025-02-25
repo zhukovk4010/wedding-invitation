@@ -1,9 +1,10 @@
 import {Component, input} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
+import {ScrollAnimateDirective} from '../../animation/scroll-animate.directive';
 
 @Component({
   selector: 'app-welcome-section',
-  imports: [],
+  imports: [ScrollAnimateDirective],
   templateUrl: './welcome-section.component.html',
   styleUrl: './welcome-section.component.scss',
   animations: [

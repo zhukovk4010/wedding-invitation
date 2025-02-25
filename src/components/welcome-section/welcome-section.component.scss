@@ -1,5 +1,5 @@
 .content {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .welcome-section {
@@ -7,18 +7,31 @@
   position: relative;
   overflow: hidden;
 
-  display: grid;
-  place-items: center;
-
   &__title {
     text-align: center;
-    margin: 0;
+    font-size: 3rem;
+    margin: 3rem 0 0;
+
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+
+    &.animate {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 
   &__paragraph {
     margin-top: 1rem;
     text-align: center;
-    font-size: 0.875rem;
+    font-size: 1rem;
+
+
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+
+    &.animate {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 
   &__date {
@@ -49,8 +62,15 @@
 
 .first-text {
   margin-top: 2rem;
-  font-size: 1.25rem;
-  width: 60%;
+  font-size: 1rem;
+  text-align: center;
+
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+
+  &.animate {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .images-container {
@@ -64,4 +84,9 @@
   & img {
     width: 40%;
   }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-100px);
 }
