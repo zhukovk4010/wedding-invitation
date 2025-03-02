@@ -1,0 +1,43 @@
+.section {
+  padding: 0 1rem 2rem;
+  overflow: hidden;
+
+  &__title {
+    text-align: center;
+  }
+}
+
+.faq-card {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--gray);
+  box-shadow: 0 0.5rem 1rem var(--background-color);
+
+  opacity: 0;
+  transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+
+  & + & {
+    margin-top: 1.5rem;
+  }
+
+  &__title {
+    margin: 0;
+    text-align: center;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.faq-card--right {
+  transform: translateX(100px);
+}
+
+.faq-card.animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+

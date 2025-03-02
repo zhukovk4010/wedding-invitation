@@ -6,10 +6,11 @@ import {TimingSectionComponent} from '../../components/timing-section/timing-sec
 import {WelcomeImgSectionComponent} from '../../components/welcome-img-section/welcome-img-section.component';
 import {PlaceSectionComponent} from '../../components/place-section/place-section.component';
 import {DressCodeSectionComponent} from '../../components/dress-code-section/dress-code-section.component';
+import {FaqSectionComponent} from '../../components/faq-section/faq-section.component';
 
 @Component({
   selector: 'app-alena-and-denis',
-  imports: [MeetingScreenComponent, WelcomeSectionComponent, TimingSectionComponent, WelcomeImgSectionComponent, PlaceSectionComponent, DressCodeSectionComponent],
+  imports: [MeetingScreenComponent, WelcomeSectionComponent, TimingSectionComponent, WelcomeImgSectionComponent, PlaceSectionComponent, DressCodeSectionComponent, FaqSectionComponent],
   templateUrl: './alena-and-denis.component.html',
   styleUrl: './alena-and-denis.component.scss'
 })
