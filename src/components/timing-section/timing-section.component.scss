@@ -91,6 +91,7 @@
 
   & h3 {
     font-size: 2rem;
+    line-height: 1;
     margin: 1rem 0 0;
   }
 
@@ -111,7 +112,7 @@
 }
 
 .card-2 {
-  max-width: 250px;
+  max-width: 300px;
 }
 
 .card-3 {
@@ -123,5 +124,5 @@
 }
 
 .card-last {
-  max-width: 100%;
+  width: 100%;
 }
