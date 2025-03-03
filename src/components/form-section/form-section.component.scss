@@ -1,0 +1,26 @@
+.section {
+  padding: 0 1rem 2rem;
+  overflow: hidden;
+
+  &__title {
+    text-align: center;
+  }
+}
+
+
+.form {
+  padding: 1rem;
+  border-radius: 1rem;
+  background-color: var(--gray);
+  box-shadow: 0 0.5rem 1rem var(--background-color);
+
+  &__button-submit {
+    font-family: Futura, sans-serif;
+    border: none;
+    background-color: var(--purple-color);
+    color: #FFFFFF;
+    border-radius: 0.2rem;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+}

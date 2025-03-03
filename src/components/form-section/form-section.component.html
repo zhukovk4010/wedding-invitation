@@ -1,0 +1,46 @@
+<section class="section">
+  <h2 class="h1 section__title">Заполните форму</h2>
+
+  @if (numberOfPerson() === 1) {
+    <form [formGroup]="formOnePerson" (ngSubmit)="onSubmitOnePerson()" class="form">
+      <span>{{ firstPerson() }}</span>
+      <div>
+        <span>Сможешь приехать?</span>
+      </div>
+
+      <div>
+        <button type="button" (click)="onConfirmation1()">Да</button>
+        <button type="button" (click)="onRefusal1()">Не смогу</button>
+      </div>
+
+      @if (alcoholSelector1IsVisible()) {
+        <div>
+          <span>Какой алкоголь предпочиаете?</span>
+        </div>
+      }
+
+      <button type="submit" class="form__button-submit">Отправить</button>
+    </form>
+  }
+
+  @if (numberOfPerson() === 2) {
+    <form [formGroup]="formTwoPerson" (ngSubmit)="onSubmitTwoPerson()" class="form">
+      <span>{{ firstPerson() }}</span>
+      <div>
+        <span>Сможешь приехать?</span>
+      </div>
+
+      <div>
+        <button type="button" (click)="onConfirmation1()">Да</button>
+        <button type="button" (click)="onRefusal1()">Не смогу</button>
+      </div>
+
+      @if (alcoholSelector1IsVisible()) {
+        <div>
+          <span>Какой алкоголь предпочиаете?</span>
+        </div>
+      }
+      <button type="submit" class="form__button-submit">Отправить</button>
+    </form>
+  }
+</section>

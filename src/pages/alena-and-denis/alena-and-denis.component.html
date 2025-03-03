@@ -23,3 +23,11 @@
 @if (!isMeetingScreenOpen()) {
   <app-faq-section />
 }
+
+@if (!isMeetingScreenOpen()) {
+  <app-form-section
+    [numberOfPerson]="2"
+    [firstPerson]="'Алена'"
+    [secondPerson]="'Денис'"
+  />
+}
