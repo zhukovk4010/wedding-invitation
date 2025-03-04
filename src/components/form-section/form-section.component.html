@@ -3,12 +3,12 @@
 
   @if (numberOfPerson() === 1) {
     <form [formGroup]="formOnePerson" (ngSubmit)="onSubmitOnePerson()" class="form">
-      <span>{{ firstPerson() }}</span>
+      <span class="form__name">{{ firstPerson() }}</span>
       <div>
         <span>Сможешь приехать?</span>
       </div>
 
-      <div>
+      <div class="form__buttons-wrapper">
         <button type="button" (click)="onConfirmation1()">Да</button>
         <button type="button" (click)="onRefusal1()">Не смогу</button>
       </div>
@@ -19,28 +19,59 @@
         </div>
       }
 
-      <button type="submit" class="form__button-submit">Отправить</button>
+      <div style="display: flex; justify-content: center">
+        <button type="submit" class="form__button-submit">Отправить</button>
+      </div>
     </form>
   }
 
   @if (numberOfPerson() === 2) {
     <form [formGroup]="formTwoPerson" (ngSubmit)="onSubmitTwoPerson()" class="form">
-      <span>{{ firstPerson() }}</span>
-      <div>
+      <span class="form__name">{{ firstPerson() }}</span>
+      <div style="margin-top: 0.5rem">
         <span>Сможешь приехать?</span>
       </div>
 
-      <div>
+      <div class="form__buttons-wrapper">
         <button type="button" (click)="onConfirmation1()">Да</button>
         <button type="button" (click)="onRefusal1()">Не смогу</button>
       </div>
 
       @if (alcoholSelector1IsVisible()) {
-        <div>
-          <span>Какой алкоголь предпочиаете?</span>
+        <div class="select-wrapper">
+          <label for="select">Какой алкоголь предпочиаете?</label>
+          <select id="select" formControlName="alcohol" class="select">
+            @for (option of options; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
         </div>
       }
-      <button type="submit" class="form__button-submit">Отправить</button>
+
+      <span style="display: block; margin-top: 1.5rem" class="form__name">{{ secondPerson() }}</span>
+      <div style="margin-top: 0.5rem">
+        <span>Сможешь приехать?</span>
+      </div>
+
+      <div class="form__buttons-wrapper">
+        <button type="button" (click)="onConfirmation2()">Да</button>
+        <button type="button" (click)="onRefusal2()">Не смогу</button>
+      </div>
+
+      @if (alcoholSelector2IsVisible()) {
+        <div class="select-wrapper">
+          <label for="select2">Какой алкоголь предпочиаете?</label>
+          <select id="select2" formControlName="secondAlcohol" class="select">
+            @for (option of options; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
+        </div>
+      }
+
+      <div style="display: flex; justify-content: center">
+        <button type="submit" class="form__button-submit">Отправить</button>
+      </div>
     </form>
   }
 </section>

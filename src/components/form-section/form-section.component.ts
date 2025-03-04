@@ -10,6 +10,8 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
   styleUrl: './form-section.component.scss'
 })
 export class FormSectionComponent implements OnInit {
+  options = ['Красное вино', 'Белое вино (сухое)', 'Белое вино (полусладкое)', 'Водка', 'Виски', 'Коньяк', 'Не пью']
+
   public numberOfPerson = input.required<number>();
   public firstPerson = input.required<string>();
   public secondPerson = input<string>();
@@ -39,7 +41,7 @@ export class FormSectionComponent implements OnInit {
     }
     if (this.numberOfPerson() === 2) {
       this.formTwoPerson.controls.personName.setValue(this.firstPerson());
-      this.formTwoPerson.controls.secondPersonName.setValue(this.firstPerson());
+      this.formTwoPerson.controls.secondPersonName.setValue(this.secondPerson()!);
       return
     }
   }
