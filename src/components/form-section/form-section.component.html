@@ -14,9 +14,18 @@
       </div>
 
       @if (alcoholSelector1IsVisible()) {
-        <div>
-          <span>Какой алкоголь предпочиаете?</span>
+        <div class="select-wrapper">
+          <label for="select1">Какой алкоголь предпочиаете?</label>
+          <select id="select1" formControlName="alcohol" class="select">
+            @for (option of options; track option) {
+              <option [value]="option">{{ option }}</option>
+            }
+          </select>
         </div>
+      }
+
+      @if (notWillBe1()) {
+        <div style="margin-top: 0.5rem">Очень жаль 🥺</div>
       }
 
       <div style="display: flex; justify-content: center">
@@ -48,6 +57,11 @@
         </div>
       }
 
+      @if (notWillBe1()) {
+        <div style="margin-top: 0.5rem">Очень жаль 🥺</div>
+      }
+
+
       <span style="display: block; margin-top: 1.5rem" class="form__name">{{ secondPerson() }}</span>
       <div style="margin-top: 0.5rem">
         <span>Сможешь приехать?</span>
@@ -69,9 +83,19 @@
         </div>
       }
 
+      @if (notWillBe2()) {
+        <div style="margin-top: 0.5rem">Очень жаль 🥺</div>
+      }
+
       <div style="display: flex; justify-content: center">
         <button type="submit" class="form__button-submit">Отправить</button>
       </div>
     </form>
+  }
+
+  @if (canViewTelegram()) {
+    <div class="tg-link">
+      <a href="https://t.me/+6V7pLK13WBJjOTRi" target="_blank">Телеграм чат</a>
+    </div>
   }
 </section>

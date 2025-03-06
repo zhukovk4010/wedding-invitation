@@ -14,7 +14,6 @@ export class ScrollAnimateDirective implements AfterViewInit {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          console.log('Intersecting');
           this.renderer.removeClass(this.el.nativeElement, 'hidden'); // Убираем скрытие
           this.el.nativeElement.classList.add('animate'); // Добавляем класс анимации
         }

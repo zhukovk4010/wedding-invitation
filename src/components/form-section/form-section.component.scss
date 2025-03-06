@@ -66,3 +66,19 @@
   padding: 0.5rem 1rem;
   color: var(--main-text-color)
 }
+
+.tg-link {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+
+  & a {
+    border: none;
+    background-color: var(--purple-color);
+    color: #FFFFFF;
+    border-radius: 0.5rem;
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+  }
+}

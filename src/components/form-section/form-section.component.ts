@@ -16,8 +16,13 @@ export class FormSectionComponent implements OnInit {
   public firstPerson = input.required<string>();
   public secondPerson = input<string>();
 
+  public canViewTelegram = input<boolean>();
+
   public alcoholSelector1IsVisible = signal(false);
   public alcoholSelector2IsVisible = signal(false);
+
+  public notWillBe1 = signal(false);
+  public notWillBe2 = signal(false);
 
   public formOnePerson = new FormGroup({
     personName: new FormControl(''),
@@ -58,12 +63,14 @@ export class FormSectionComponent implements OnInit {
     if (this.numberOfPerson() === 1) {
       this.alcoholSelector1IsVisible.set(true)
       this.formOnePerson.controls.willBe.setValue(true);
+      this.notWillBe1.set(false)
       return;
     }
 
     if (this.numberOfPerson() === 2) {
       this.alcoholSelector1IsVisible.set(true)
       this.formTwoPerson.controls.willBe.setValue(true);
+      this.notWillBe1.set(false)
       return;
     }
 
@@ -72,21 +79,31 @@ export class FormSectionComponent implements OnInit {
   public onConfirmation2() {
     this.alcoholSelector2IsVisible.set(true)
     this.formTwoPerson.controls.secondWillBe.setValue(true);
+    this.notWillBe2.set(false)
     return;
   }
 
   public onRefusal1() {
     if (this.numberOfPerson() === 1) {
       this.formOnePerson.controls.willBe.setValue(false);
+      this.formOnePerson.controls.alcohol.setValue(null);
+      this.alcoholSelector1IsVisible.set(false)
+      this.notWillBe1.set(true)
       return;
     }
 
     if (this.numberOfPerson() === 2) {
       this.formTwoPerson.controls.willBe.setValue(false);
+      this.formTwoPerson.controls.alcohol.setValue(null);
+      this.alcoholSelector1IsVisible.set(false)
+      this.notWillBe1.set(true)
     }
   }
 
   public onRefusal2() {
     this.formTwoPerson.controls.secondWillBe.setValue(false);
+    this.formTwoPerson.controls.alcohol.setValue(null);
+    this.alcoholSelector2IsVisible.set(false)
+    this.notWillBe2.set(true)
   }
 }
