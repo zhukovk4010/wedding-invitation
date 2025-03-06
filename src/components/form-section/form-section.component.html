@@ -10,7 +10,7 @@
 
       <div class="form__buttons-wrapper">
         <button type="button" (click)="onConfirmation1()">Да</button>
-        <button type="button" (click)="onRefusal1()">Не смогу</button>
+        <button type="button" (click)="onRefusal1()">Нет, не смогу</button>
       </div>
 
       @if (alcoholSelector1IsVisible()) {
@@ -43,7 +43,7 @@
 
       <div class="form__buttons-wrapper">
         <button type="button" (click)="onConfirmation1()">Да</button>
-        <button type="button" (click)="onRefusal1()">Не смогу</button>
+        <button type="button" (click)="onRefusal1()">Нет, не смогу</button>
       </div>
 
       @if (alcoholSelector1IsVisible()) {
@@ -69,7 +69,7 @@
 
       <div class="form__buttons-wrapper">
         <button type="button" (click)="onConfirmation2()">Да</button>
-        <button type="button" (click)="onRefusal2()">Не смогу</button>
+        <button type="button" (click)="onRefusal2()">Нет, не смогу</button>
       </div>
 
       @if (alcoholSelector2IsVisible()) {
@@ -87,14 +87,23 @@
         <div style="margin-top: 0.5rem">Очень жаль 🥺</div>
       }
 
+      @if (isErrorResponse()) {
+        <div style="color: red; text-align: center; margin-top: 1rem">Ошибка при отправке</div>
+      }
+
       <div style="display: flex; justify-content: center">
         <button type="submit" class="form__button-submit">Отправить</button>
       </div>
+
+      @if (isSuccessResponse()) {
+        <div style="text-align: center; margin-top: 1rem">✅ Успешно отправлено!</div>
+      }
     </form>
   }
 
   @if (canViewTelegram()) {
     <div class="tg-link">
+      <span>Заходите в телеграм чат</span>
       <a href="https://t.me/+6V7pLK13WBJjOTRi" target="_blank">Телеграм чат</a>
     </div>
   }

@@ -1,5 +1,6 @@
-import {Component, input, OnInit, signal} from '@angular/core';
+import {Component, inject, input, OnInit, signal} from '@angular/core';
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
+import {ContactService} from '../../services/contact.service';
 
 @Component({
   selector: 'app-form-section',
@@ -10,6 +11,8 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
   styleUrl: './form-section.component.scss'
 })
 export class FormSectionComponent implements OnInit {
+  private _contactService = inject(ContactService);
+
   options = ['Красное вино', 'Белое вино (сухое)', 'Белое вино (полусладкое)', 'Водка', 'Виски', 'Коньяк', 'Не пью']
 
   public numberOfPerson = input.required<number>();
@@ -23,6 +26,9 @@ export class FormSectionComponent implements OnInit {
 
   public notWillBe1 = signal(false);
   public notWillBe2 = signal(false);
+
+  public isSuccessResponse = signal(false);
+  public isErrorResponse = signal(false);
 
   public formOnePerson = new FormGroup({
     personName: new FormControl(''),
@@ -56,7 +62,16 @@ export class FormSectionComponent implements OnInit {
   }
 
   public onSubmitTwoPerson() {
-    console.log(this.formTwoPerson.value);
+    this._contactService.sendForm(this.formTwoPerson.value).subscribe({
+      next: (res: any) => {
+        if (res.success) {
+          this.isSuccessResponse.set(true)
+        }
+      },
+      error: err => {
+        this.isErrorResponse.set(true)
+      }
+    })
   }
 
   public onConfirmation1() {
