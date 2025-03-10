@@ -1,1 +1,33 @@
-<p>fedchenkova works!</p>
+@if (isMeetingScreenOpen()) {
+  <app-meeting-screen (closeMeetingScreen)="onUnlock()" />
+}
+
+<app-welcome-img-section />
+
+@if (!isMeetingScreenOpen()) {
+  <app-welcome-section [isUnlocked]="!isMeetingScreenOpen()" [text]="usersData.fedchenkova.welcomeText" />
+}
+
+@if (!isMeetingScreenOpen()) {
+  <app-timing-section />
+}
+
+@if (!isMeetingScreenOpen()) {
+  <app-place-section />
+}
+
+@if (!isMeetingScreenOpen()) {
+  <app-dress-code-section />
+}
+
+@if (!isMeetingScreenOpen()) {
+  <app-faq-section />
+}
+
+@if (!isMeetingScreenOpen()) {
+  <app-form-section
+    [numberOfPerson]="1"
+    [firstPerson]="'Катя'"
+    [canViewTelegram]="true"
+  />
+}
