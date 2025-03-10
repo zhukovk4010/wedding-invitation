@@ -28,9 +28,17 @@
         <div style="margin-top: 0.5rem">Очень жаль 🥺</div>
       }
 
+      @if (isErrorResponse()) {
+        <div style="color: red; text-align: center; margin-top: 1rem">Ошибка при отправке</div>
+      }
+
       <div style="display: flex; justify-content: center">
         <button type="submit" class="form__button-submit">Отправить</button>
       </div>
+
+      @if (isSuccessResponse()) {
+        <div style="text-align: center; margin-top: 1rem">✅ Успешно отправлено!</div>
+      }
     </form>
   }
 

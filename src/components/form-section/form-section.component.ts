@@ -58,7 +58,16 @@ export class FormSectionComponent implements OnInit {
   }
 
   public onSubmitOnePerson() {
-    console.log(this.formOnePerson.value);
+    this._contactService.sendForm(this.formOnePerson.value).subscribe({
+      next: (res: any) => {
+        if (res.success) {
+          this.isSuccessResponse.set(true)
+        }
+      },
+      error: err => {
+        this.isErrorResponse.set(true)
+      }
+    })
   }
 
   public onSubmitTwoPerson() {
