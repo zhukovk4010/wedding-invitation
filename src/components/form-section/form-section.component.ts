@@ -19,6 +19,8 @@ export class FormSectionComponent implements OnInit {
   public firstPerson = input.required<string>();
   public secondPerson = input<string>();
 
+  public bolshakova = input<boolean>(false);
+
   public canViewTelegram = input<boolean>();
 
   public alcoholSelector1IsVisible = signal(false);

@@ -82,7 +82,7 @@
 
       <span style="display: block; margin-top: 1.5rem" class="form__name">{{ secondPerson() }}</span>
       <div style="margin-top: 0.5rem">
-        <span>Сможешь приехать?</span>
+        <span>{{ !bolshakova() ? 'Сможешь приехать?' : '' }}</span>
       </div>
 
       <div class="form__buttons-wrapper">
