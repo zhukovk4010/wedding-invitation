@@ -71,8 +71,9 @@
   border: 2px solid var(--silver-color);
   box-shadow: 0 0.5rem 1rem var(--background-color);
 
-  & span {
-    line-height: 60px;
+  & svg {
+    width: 30px;
+    height: 30px;
   }
 }
 
