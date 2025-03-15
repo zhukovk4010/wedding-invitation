@@ -22,8 +22,8 @@ import { NoHandsComponent } from '../pages/no-hands/no-hands.component';
 
 export const routes: Routes = [
     {path: '', component: MainPageComponent},
-    {path: 'juliaAndDania', component: JuliaAndDaniaPageComponent},
-    {path: 'kateAndMisha', component: KateAndMishaComponent},
+    {path: 'julia', component: JuliaAndDaniaPageComponent},
+    {path: 'kate', component: KateAndMishaComponent},
     {path: 'kravchenko', component: KravchenkoComponent},
     {path: 'yeskov', component: YeskovComponent},
     {path: 'bolshakova', component: BolshakovaComponent},
