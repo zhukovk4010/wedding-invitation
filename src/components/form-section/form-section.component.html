@@ -22,6 +22,11 @@
             }
           </select>
         </div>
+
+        <div class="select-wrapper">
+          <label for="allergy1">Есть ли аллергия?</label>
+          <input class="input" id="allergy1" type="text" formControlName="allergy">
+        </div>
       }
 
       @if (notWillBe1()) {
@@ -63,6 +68,11 @@
             }
           </select>
         </div>
+
+        <div class="select-wrapper">
+          <label for="allergy2">Есть ли аллергия?</label>
+          <input class="input" id="allergy2" type="text" formControlName="allergy">
+        </div>
       }
 
       @if (notWillBe1()) {
@@ -88,6 +98,11 @@
               <option [value]="option">{{ option }}</option>
             }
           </select>
+        </div>
+
+        <div class="select-wrapper">
+          <label for="allergy3">Есть ли аллергия?</label>
+          <input class="input" id="allergy3" type="text" formControlName="secondAllergy">
         </div>
       }
 

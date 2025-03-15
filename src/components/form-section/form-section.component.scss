@@ -68,6 +68,15 @@
   color: var(--main-text-color)
 }
 
+.input {
+  height: 40px;
+  border: 2px solid var(--purple-color);
+  background-color: var(--background-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: var(--main-text-color)
+}
+
 .tg-link {
   margin-top: 2rem;
   display: flex;

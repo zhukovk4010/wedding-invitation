@@ -34,15 +34,18 @@ export class FormSectionComponent implements OnInit {
     personName: new FormControl(''),
     willBe: new FormControl<boolean | null>(null),
     alcohol: new FormControl<string | null>(null),
+    allergy: new FormControl(''),
   })
 
   public formTwoPerson = new FormGroup({
     personName: new FormControl(''),
     willBe: new FormControl<boolean | null>(null),
     alcohol: new FormControl<string | null>(null),
+    allergy: new FormControl(''),
     secondPersonName: new FormControl(''),
     secondWillBe: new FormControl<boolean | null>(null),
     secondAlcohol: new FormControl<string | null>(null),
+    secondAllergy: new FormControl(''),
   })
 
   ngOnInit(): void {
