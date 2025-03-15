@@ -17,12 +17,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
 
   & * {
     display: block;
     text-shadow: 2px 2px 2px #000;
     font-family: Sacramente, sans-serif;
     line-height: 0.8;
+    position: relative;
+    left: 1.5rem;
   }
 
   &__day {
